@@ -19,7 +19,7 @@ export default function VatIdCheck() {
 
     axios.get(apiUrl).then(handleResponse);
   }
-  function handleKeywordChange() {
+  function handleKeywordChange(event) {
     setKeyword(event.target.value);
   }
   return (
