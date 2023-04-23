@@ -13,6 +13,7 @@ export default function VatIdCheck() {
 
   function search(event) {
     event.preventDefault();
+    alert(`Searching ${keyword}`);
 
     let apiKey = `eg9uTHp9geZ0NlaT7CXL0jpPeBSNYXsvMQP0eLGa`;
     let apiUrl = `https://api.vatcheckapi.com/v2/check?vat_number=EE101992839&apikey=${apiKey}`;
