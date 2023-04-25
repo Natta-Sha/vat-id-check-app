@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Results from "./Results";
 import "./VatIdCheck.css";
 
 //Documentation: https://vatcheckapi.com/docs/#authentication-methods
 
 export default function VatIdCheck() {
   let [keyword, setKeyword] = useState("");
+  let [results, setResults] = useState("");
 
   function handleResponse(response) {
-    console.log(response.data.registration_info.address);
+    console.log(response.data);
+    setResults(response.data);
   }
 
   function search(event) {
     event.preventDefault();
-    alert(`Searching ${keyword}`);
 
     let apiKey = `eg9uTHp9geZ0NlaT7CXL0jpPeBSNYXsvMQP0eLGa`;
-    let apiUrl = `https://api.vatcheckapi.com/v2/check?vat_number=EE101992839&apikey=${apiKey}`;
+    let apiUrl = `https://api.vatcheckapi.com/v2/check?vat_number=${keyword}&apikey=${apiKey}`;
 
     axios.get(apiUrl).then(handleResponse);
   }
@@ -33,6 +35,7 @@ export default function VatIdCheck() {
           onChange={handleKeywordChange}
         />
       </form>
+      <Results results={results} />
     </div>
   );
 }
