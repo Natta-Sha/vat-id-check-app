@@ -5,8 +5,6 @@ import VatAddress from "./VatAddress";
 import VatName from "./VatName";
 
 export default function Results(props) {
-  console.log(props.results);
-
   if (props.results) {
     var vatNumber = `${props.results.country_code}${props.results.vat_number}`;
     return (
