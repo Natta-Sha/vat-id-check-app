@@ -6,21 +6,25 @@ import VatName from "./VatName";
 
 export default function Results(props) {
   if (props.results) {
-    var vatNumber = `${props.results.country_code}${props.results.vat_number}`;
-    return (
-      <div className="Results">
-        <p>
-          <VatNumber vatNumber={vatNumber} />
-        </p>
+    if (props.results.checksum_valid) {
+      var vatNumber = `${props.results.country_code}${props.results.vat_number}`;
+      return (
+        <div className="Results">
+          <div>
+            <VatNumber vatNumber={vatNumber} />
+          </div>
 
-        <p>
-          <VatName vatName={props.results.registration_info.name} />
-        </p>
-        <p>
-          <VatAddress vatAddress={props.results.registration_info.address} />
-        </p>
-      </div>
-    );
+          <div>
+            <VatName vatName={props.results.registration_info.name} />
+          </div>
+          <div>
+            <VatAddress vatAddress={props.results.registration_info.address} />
+          </div>
+        </div>
+      );
+    } else {
+      return <div>Invalid VAT number</div>;
+    }
   } else {
     return null;
   }
