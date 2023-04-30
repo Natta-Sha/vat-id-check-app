@@ -4,6 +4,7 @@ import Results from "./Results";
 import "./VatIdCheck.css";
 
 //Documentation: https://vatcheckapi.com/docs/#authentication-methods
+//https://vatcheck.io/dashboard
 
 export default function VatIdCheck() {
   let [keyword, setKeyword] = useState("");
@@ -17,8 +18,8 @@ export default function VatIdCheck() {
   function search(event) {
     event.preventDefault();
 
-    let apiKey = `eg9uTHp9geZ0NlaT7CXL0jpPeBSNYXsvMQP0eLGa`;
-    let apiUrl = `https://api.vatcheckapi.com/v2/check?vat_number=${keyword}&apikey=${apiKey}`;
+    let apiKey = `gG0YjzxewnHQTKxW7d1XszMYkwUdT1SXkJ3D5cET`;
+    let apiUrl = `https://vatcheck.io/api/validate?vat_number=${keyword}&api-key=${apiKey}`;
 
     axios.get(apiUrl).then(handleResponse);
   }
