@@ -22,7 +22,11 @@ export default function Results(props) {
         </div>
       );
     } else {
-      return <div>Invalid VAT number</div>;
+      return (
+        <div>
+          <strong>Invalid VAT number</strong>
+        </div>
+      );
     }
   } else {
     return null;

@@ -3,6 +3,11 @@ import "./VatAddress.css";
 
 export default function VatAddress(props) {
   if (props.vatAddress) {
-    return <div className="VatAddress">Address: {props.vatAddress}</div>;
-  } else return "Address: ---";
+    return (
+      <div className="VatAddress">
+        <strong>Address: </strong>
+        {props.vatAddress}
+      </div>
+    );
+  } else return <strong>Address: ---</strong>;
 }

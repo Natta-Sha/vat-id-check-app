@@ -27,16 +27,35 @@ export default function VatIdCheck() {
     setKeyword(event.target.value.toUpperCase());
   }
   return (
-    <div className="VatIdCheck">
-      <form onSubmit={search}>
-        <input
-          type="search"
-          placeholder="AB123456789 (Type VAT number including country code"
-          autoFocus={true}
-          onChange={handleKeywordChange}
-        />
-      </form>
-      <Results results={results} />
+    <div className="VatIdCheck ">
+      <div className="m-5">
+        <form class="row gy-2 gx-3 align-items-center" onSubmit={search}>
+          <div class="col-6">
+            <label for="colFormLabel" class="ol-sm-2 col-form-label">
+              Check the validity of VAT number
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              id="colFormLabel"
+              placeholder="AB123456789 (Type VAT number including country code"
+              autoFocus={true}
+              onChange={handleKeywordChange}
+            />
+          </div>
+        </form>
+
+        <div class="row mt-5 ">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <Results results={results} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
