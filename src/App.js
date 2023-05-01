@@ -7,7 +7,9 @@ export default function App() {
     <div className="App">
       <div className="container">
         <VatIdCheck />
-        <footer className="App-footer">Coded by NB</footer>
+        <footer className="App-footer" class="fixed-bottom text-center">
+          Coded by NB
+        </footer>
       </div>
     </div>
   );
