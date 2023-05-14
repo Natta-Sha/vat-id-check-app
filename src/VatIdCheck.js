@@ -34,15 +34,25 @@ export default function VatIdCheck() {
             <label for="colFormLabel" class="ol-sm-2 col-form-label">
               Check the validity of VAT number
             </label>
-
-            <input
-              type="text"
-              class="form-control"
-              id="colFormLabel"
-              placeholder="AB123456789 (Type VAT number including country code"
-              autoFocus={true}
-              onChange={handleKeywordChange}
-            />
+            <div className="row">
+              <div className="col-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="colFormLabel"
+                  placeholder="AB123456789 (Type VAT number including country code"
+                  autoFocus={true}
+                  onChange={handleKeywordChange}
+                />
+              </div>
+              <div className="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  className="btn btn-secondary w-100"
+                />
+              </div>
+            </div>
           </div>
         </form>
 
